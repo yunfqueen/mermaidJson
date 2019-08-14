@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://cdn.bootcss.com/font-awesome/5.8.2/css/all.css" rel="stylesheet">
+  <style>
+    foreignObject{
+      overflow:unset !important;
+    }
+    i{
+      font-size: 14px !important;
+    }
+
+  </style>
+</head>
+<body>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+  <script src="js/mermaid.js"></script>
+  <div class="mermaid box" id="graphDiv"></div>
+  <script>
+    var aaicon = `graph TD
+      B["fa:fa-car for peaceww"]
+      B-->C[fa:fa-ban forbidden]
+      B-->D(fa:fa-spinner);
+      B-->E(A fa:fa-camera-retro perhaps?);
+      click B callback
+    `
+    mermaid.initialize({
+      flowchart: { 
+        curve: 'basis' 
+      },
+      theme: "forest",
+      startOnLoad:true,
+    })
+    // console.log(mermaid)
+    var graphData = `graph LR
+                        A-->B
+                        B-->C
+                        B-->D
+                        B-->E
+                        click A callback
+                    ` 
+    var kid_ = `
+        graph TD
+          M-->A
+          subgraph title
+              A --text-->B
+              B --> D
+              B --> N
+          end
+          M-->DD
+          DD-->EE
+          EE-->FF
+          click A callback
+    `
+    var content = document.getElementById('graphDiv');
+　　　   content.innerHTML=kid_;
+    // mermaid.mermaidAPI.initialize({
+    //     startOnLoad:true
+    // });
+    // $(function(){
+    //     // Example of using the API
+    //     var element = document.querySelector("#graphDiv");
+
+    //     var insertSvg = function(svgCode, bindFunctions){
+    //         element.innerHTML = svgCode;
+    //     };
+
+    //     var graphDefinition = 'graph TB\na-->b';
+    //     var graph = mermaid.mermaidAPI.render('graphDiv', graphDefinition, insertSvg);
+    // });
+
+    var callback = function(a){
+      console.log(a)
+        alert(a);
+    }
+  </script>
+</body>
+</html>

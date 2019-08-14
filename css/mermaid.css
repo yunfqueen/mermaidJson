@@ -1,0 +1,83 @@
+/* .mermaid{
+  max-width: none !important;
+} */
+foreignObject{
+  overflow:unset !important;
+}
+p{padding: 0;margin: 0;color: rgb(165, 187, 247)}
+/* 箭头 */
+.arrowheadPath{
+  opacity:0;
+  fill: rgb(186, 186, 189) !important;
+  animation:fadeIn 1s ease 4s forwards;
+}
+
+.edgePath .path{
+  stroke:rgb(186, 186, 189) !important;
+  stroke-width:1.5px !important;
+  animation:move 5s linear forwards ;
+  stroke-dasharray:100%,100%;
+}
+.edgePath .path:hover{
+  stroke:rgb(7, 7, 100);
+}
+@keyframes move{
+  0%{
+    stroke-dasharray:0,100%;
+  }
+}
+@keyframes fadeIn {
+  0% {
+      opacity: 0
+  }
+  100% {
+      opacity: 1
+  }
+}
+.parameterCss{
+  opacity:0 !important;
+  animation: fadeIn 5s 3s forwards;
+}
+.parameterCss>rect{
+  fill:rgb(111, 139, 180) !important;
+  stroke:rgb(168, 167, 167) !important;
+  stroke-width:1px !important;
+}
+.inCss>circle{
+  fill:#fec494 !important;
+  stroke:rgb(168, 167, 167) !important;
+  stroke-width:1px !important;
+}
+.outCss>.label,.inCss>.label{
+  text-align:center;
+}
+.outCss>.label>foreignObject>div>p,.inCss>.label>foreignObject>div>p{
+  color: aquamarine;
+  padding: 0;
+  margin: 0;
+}
+.outCss>circle{
+  fill:#e6fdc7 !important;
+  stroke:rgb(168, 167, 167) !important;
+  stroke-width:1px !important;
+}
+.libraryCss>rect{
+  fill:#b5d0ff !important;
+  stroke:#90a7d0 !important;
+  stroke-width:1px !important;
+}
+.modelCss>rect{
+  fill:#c9c9c9 !important;
+  stroke:#aaaaaa !important;
+  stroke-width:1px !important;
+  min-width: 90px;
+  min-height: 90px;
+}
+.resultCss>circle{
+  fill:#f37610 !important;
+  stroke:rgb(168, 167, 167) !important;
+  stroke-width:1px !important;
+}
+.edgePath:hover,.node:hover{
+  cursor:pointer;
+} 

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
+  <link rel="stylesheet" href="css/mermaid.css">
+</head>
+<body>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+  <script src="js/mermaid.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/mermaidjson.js"></script>
+  <button onClick="butClick()">点击</button>
+  <div class="mermaid" id="graphDiv"></div>
+  <script>
+    
+    var mermaidData = json;
+    //初始化
+    renderInit();
+
+    function butClick(){
+      mermaidData = json2;
+      renderInit()
+    }
+    //点击edge
+    function edgeClick(id,prevNodeId,nextNodeId){
+      console.log(id,prevNodeId,nextNodeId)
+      
+    }
+    //点击node节点
+    function nodeClick(id,node){
+      console.log(id)
+      console.log(node)
+    }
+  </script>
+</body>
+</html>
